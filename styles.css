@@ -1,71 +1,322 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background: #f0f4f8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
 }
 
+/* Container */
 .container {
-  background: white;
-  padding: 30px 40px;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  max-width: 350px;
-  width: 100%;
-  text-align: center;
+    width: 100%;
+    max-width: 400px;
+    background: white;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-  margin-bottom: 24px;
-  color: #333;
+/* Header */
+.header {
+    background: #0d6efd;
+    color: white;
+    padding: 24px 20px;
+    text-align: center;
 }
 
-label {
-  display: block;
-  text-align: left;
-  margin: 15px 0 6px;
-  color: #555;
-  font-weight: 600;
+.title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 4px;
 }
 
-input[type="number"] {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 2px solid #ddd;
-  border-radius: 4px;
-  box-sizing: border-box;
-  transition: border-color 0.3s ease;
+.subtitle {
+    font-size: 14px;
+    opacity: 0.9;
 }
 
-input[type="number"]:focus {
-  border-color: #007BFF;
-  outline: none;
+/* Main Content */
+.main {
+    padding: 24px 20px;
 }
 
-button {
-  margin-top: 25px;
-  padding: 12px 20px;
-  font-size: 16px;
-  background-color: #007BFF;
-  border: none;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 100%;
-  transition: background-color 0.3s ease;
+/* System Selector */
+.system-selector {
+    display: flex;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    margin-bottom: 24px;
 }
 
-button:hover {
-  background-color: #0056b3;
+.system-btn {
+    flex: 1;
+    padding: 12px 16px;
+    border: none;
+    background: transparent;
+    color: #6c757d;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s;
 }
 
-.result {
-  margin-top: 20px;
-  font-size: 18px;
-  font-weight: 700;
-  color: #222;
+.system-btn.active {
+    background: #0d6efd;
+    color: white;
+}
+
+/* Input Sections */
+.input-section {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.input-row {
+    display: flex;
+    gap: 12px;
+}
+
+.input-row .input-group {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.input-group label {
+    display: block;
+    font-size: 13px;
+    color: #495057;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    font-size: 15px;
+    background: white;
+    color: #212529;
+    transition: border-color 0.2s;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: #0d6efd;
+}
+
+.unit {
+    position: absolute;
+    right: 12px;
+    top: 34px;
+    font-size: 13px;
+    color: #6c757d;
+}
+
+.input-row .unit {
+    top: 34px;
+}
+
+/* Calculate Button */
+.calculate-btn {
+    width: 100%;
+    padding: 14px;
+    background: #0d6efd;
+    color: white;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin: 16px 0 24px 0;
+}
+
+.calculate-btn:hover {
+    background: #0b5ed7;
+}
+
+.calculate-btn:active {
+    background: #0a58ca;
+}
+
+/* Result Section */
+.result-section {
+    margin-bottom: 24px;
+}
+
+.result-box {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 20px;
+    text-align: center;
+}
+
+.result-label {
+    font-size: 13px;
+    color: #6c757d;
+    margin-bottom: 8px;
+}
+
+.bmi-value {
+    font-size: 40px;
+    font-weight: 700;
+    color: #212529;
+    margin: 8px 0;
+}
+
+.category {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+.category.underweight {
+    color: #0dcaf0;
+}
+
+.category.normal {
+    color: #198754;
+}
+
+.category.overweight {
+    color: #ffc107;
+}
+
+.category.obese {
+    color: #dc3545;
+}
+
+/* Scale Section */
+.scale-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.scale-item {
+    background: white;
+    border: 1px solid #dee2e6;
+    padding: 12px 8px;
+    text-align: center;
+}
+
+.scale-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: #212529;
+    margin-bottom: 4px;
+}
+
+.scale-range {
+    font-size: 11px;
+    color: #6c757d;
+}
+
+/* Utility Classes */
+.hidden {
+    display: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+    body {
+        padding: 12px;
+    }
+    
+    .container {
+        max-width: 100%;
+    }
+    
+    .header {
+        padding: 20px 16px;
+    }
+    
+    .main {
+        padding: 20px 16px;
+    }
+    
+    .title {
+        font-size: 22px;
+    }
+    
+    .bmi-value {
+        font-size: 36px;
+    }
+    
+    .input-field {
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    .system-btn {
+        padding: 10px;
+    }
+    
+    .calculate-btn {
+        padding: 12px;
+        font-size: 15px;
+    }
+    
+    .scale-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 360px) {
+    .header {
+        padding: 18px 14px;
+    }
+    
+    .main {
+        padding: 18px 14px;
+    }
+    
+    .title {
+        font-size: 20px;
+    }
+    
+    .bmi-value {
+        font-size: 32px;
+    }
+}
+
+/* Landscape Mode */
+@media (max-height: 500px) and (orientation: landscape) {
+    .container {
+        max-width: 100%;
+    }
+    
+    .main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        align-items: start;
+    }
+    
+    .system-selector {
+        grid-column: 1 / -1;
+    }
+    
+    .result-section {
+        margin-bottom: 0;
+    }
+    
+    .scale-section {
+        grid-column: 1 / -1;
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
